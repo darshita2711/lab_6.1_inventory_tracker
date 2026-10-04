@@ -11,3 +11,6 @@ for (let i = 0; i < products.length; i++) {
     console.log(products[i]!.displayDetails());
     console.log("Final Price: $" + calculateTax(products[i]!));
 }
+
+const laptop = new PhysicalProduct("1", "Laptop", 1000, 2.5);
+console.log("Discounted Price: $" + laptop.applyDiscount(10));

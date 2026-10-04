@@ -1,6 +1,7 @@
 import Product from "./Product.js";
+import  type {DiscountableProduct}  from "../interface/DiscountableProduct.js";
 
-class PhysicalProduct extends Product {
+class PhysicalProduct extends Product implements DiscountableProduct {
     // added weight for this class
     weight: number;
 
@@ -21,5 +22,10 @@ class PhysicalProduct extends Product {
         return `${this.weight} kg`;
     }
 
+    // added discount part
+    applyDiscount(discount: number): number {
+        // console.log(this.price,discount,"ppp")
+        return this.price - (this.price * discount / 100);
+    }
 }
 export default PhysicalProduct;
